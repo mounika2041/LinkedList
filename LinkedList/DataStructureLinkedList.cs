@@ -37,18 +37,28 @@ namespace LinkedList
             }
             return temp;
         }
-        public void DeleteFirst()
+        public int DeleteLast()
         {
-            if(head==null)
+            Node temp = this.head;
+            if (this.head == null)
             {
-                Console.WriteLine("Linked list is empty");
+                Console.WriteLine("linked list is empty");
+                return 0;
             }
-            else
+            if (this.head.next == null)
             {
-                int deleteData = head.data;
-                head = head.next;
-                Console.WriteLine("{0} is deleted from linkedlist", deleteData);
+                int data = head.data;
+                this.head = null;
+                return data;
             }
+            while (temp.next.next != null)
+            {
+                temp = temp.next;
+            }
+            int lastDeletedNode = temp.next.data;
+            temp.next = null;
+            Console.WriteLine("{0} Node is Deleted from LinkedList", lastDeletedNode);
+            return lastDeletedNode;
         }
 
         public void Display()
@@ -58,7 +68,7 @@ namespace LinkedList
             if(temp==null)
             {
                 Console.WriteLine("LinkedList is empty");
-                return;
+            return;
             }
             while (temp != null)
             {

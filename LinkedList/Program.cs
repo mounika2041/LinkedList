@@ -20,9 +20,9 @@ namespace LinkedList
                 case 1:
 
                     DataStructureLinkedList linkedList = new DataStructureLinkedList();
-                    linkedList.AddFirst(70);
-                    linkedList.AddFirst(30);
-                    linkedList.AddFirst(56);
+                    linkedList.Append(56);
+                    linkedList.Append(30);
+                    linkedList.Append(70);
                     linkedList.Display();
                     break;
                 default:

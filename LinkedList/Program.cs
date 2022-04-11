@@ -11,11 +11,24 @@ namespace LinkedList
         static void Main(string[] args)
         {
             Console.WriteLine("welcome to Data Structure of linkedList");
-            DataStructureLinkedList linkedList = new DataStructureLinkedList();
-            linkedList.AddLast(56);
-            linkedList.AddLast(30);
-            linkedList.AddLast(70);
-            linkedList.Display();
+            Console.WriteLine("please choose program number to execute");
+            Console.WriteLine("1:linkedList");
+            int input = Convert.ToInt32(Console.ReadLine());
+            switch (input)
+            {
+
+                case 1:
+
+                    DataStructureLinkedList linkedList = new DataStructureLinkedList();
+                    linkedList.AddFirst(70);
+                    linkedList.AddFirst(30);
+                    linkedList.AddFirst(56);
+                    linkedList.Display();
+                    break;
+                default:
+                    Console.WriteLine("please choose program with in the range");
+                    break;
+            }
             Console.ReadLine();
         }
     }

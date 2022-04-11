@@ -9,28 +9,16 @@ namespace LinkedList
     class DataStructureLinkedList
     {
         public Node head;
-        public void AddLast(int data)
+        /// <summary>
+        /// UC2
+        /// </summary>
+        /// <param name="new data"></param>
+        public void AddFirst(int new_data)
         {
-            Node newNode = new Node(data);
-            if(head==null)
-            {
-                head = newNode;
-            }
-            else
-            {
-                Node lastNode = GetLastNode();
-                lastNode.next = newNode;
-            }
-            Console.WriteLine("{0} Node is inserted into LinkedList", newNode.data);
-        }
-        private Node GetLastNode()
-        {
-            Node temp = head;
-            while(temp.next!=null)
-            {
-                temp = temp.next;
-            }
-            return temp;
+            Node new_Node = new Node(new_data);
+            new_Node.next = this.head;
+            this.head = new_Node;
+            Console.WriteLine("{0} Node is inserted into linkedList", new_Node.data);
         }
         public void Display()
         {

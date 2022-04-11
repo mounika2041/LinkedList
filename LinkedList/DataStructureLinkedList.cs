@@ -37,10 +37,6 @@ namespace LinkedList
             }
             return temp;
         }
-        public void Append(int newData)
-        {
-            AddLast(newData);
-        }
 
         public void Display()
         {

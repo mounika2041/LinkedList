@@ -23,6 +23,7 @@ namespace LinkedList
                     linkedList.AddLast(56);
                     linkedList.AddLast(30);
                     linkedList.AddLast(70);
+                    linkedList.DeleteFirst();
                     linkedList.Display();
                     break;
                 default:

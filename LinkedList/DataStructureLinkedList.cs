@@ -37,6 +37,19 @@ namespace LinkedList
             }
             return temp;
         }
+        public void DeleteFirst()
+        {
+            if(head==null)
+            {
+                Console.WriteLine("Linked list is empty");
+            }
+            else
+            {
+                int deleteData = head.data;
+                head = head.next;
+                Console.WriteLine("{0} is deleted from linkedlist", deleteData);
+            }
+        }
 
         public void Display()
         {

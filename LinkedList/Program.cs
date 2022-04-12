@@ -23,8 +23,8 @@ namespace LinkedList
                     linkedList.AddLast(56);
                     linkedList.AddLast(30);
                     linkedList.AddLast(70);
-                    linkedList.DeleteLast();
                     linkedList.Display();
+                    Console.WriteLine("{0} is found in linkedList", linkedList.search((30)));
                     break;
                 default:
                     Console.WriteLine("please choose program with in the range");

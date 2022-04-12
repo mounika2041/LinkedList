@@ -60,6 +60,21 @@ namespace LinkedList
             Console.WriteLine("{0} Node is Deleted from LinkedList", lastDeletedNode);
             return lastDeletedNode;
         }
+        public int search(int value)
+        {
+            Node temp = this.head;
+            while(temp!=null)
+            {
+                if(temp.data==value)
+                {
+                    Console.WriteLine("Node is present");
+                    return value;
+                }
+                temp = temp.next;
+            }
+            Console.WriteLine("\n{0} is not present", value);
+            return 0;
+        }
 
         public void Display()
         {

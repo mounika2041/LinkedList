@@ -16,10 +16,12 @@ namespace LinkedList
             linkedList.AddLast(56);
             linkedList.AddLast(30);
             linkedList.AddLast(70);
-            linkedList.Display();
-            Console.WriteLine("{0} is found in linkedList", linkedList.search((30)));
             linkedList.InsertAfter(linkedList.head.next, 40);
             linkedList.Display();
+            Console.WriteLine("{0} is found in linkedList", linkedList.search((40)));
+            linkedList.DeleteBetween(40);
+            linkedList.Display();
+            linkedList.Getsize();
             Console.ReadLine();
         }
     }

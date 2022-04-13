@@ -37,47 +37,10 @@ namespace LinkedList
             }
             return temp;
         }
-        public int DeleteLast()
+
+        public void InsertAfter(Node prev_node, int data)
         {
-            Node temp = this.head;
-            if (this.head == null)
-            {
-                Console.WriteLine("linked list is empty");
-                return 0;
-            }
-            if (this.head.next == null)
-            {
-                int data = head.data;
-                this.head = null;
-                return data;
-            }
-            while (temp.next.next != null)
-            {
-                temp = temp.next;
-            }
-            int lastDeletedNode = temp.next.data;
-            temp.next = null;
-            Console.WriteLine("{0} Node is Deleted from LinkedList", lastDeletedNode);
-            return lastDeletedNode;
-        }
-        public int search(int value)
-        {
-            Node temp = this.head;
-            while(temp!=null)
-            {
-                if(temp.data==value)
-                {
-                    Console.WriteLine("Node is present");
-                    return value;
-                }
-                temp = temp.next;
-            }
-            Console.WriteLine("\n{0} is not present", value);
-            return 0;
-        }
-        public void InsertAfter(Node prev_node,int data)
-        {
-            if(prev_node==null)
+            if (prev_node == null)
             {
                 Console.WriteLine("the given previous Node" + "cannot be null");
                 return;
@@ -88,20 +51,65 @@ namespace LinkedList
             Console.WriteLine("{0} is inserted into linkedlist", newnode.data);
         }
 
+        public int search(int value)
+        {
+            Node temp = this.head;
+            while (temp != null)
+            {
+                if (temp.data == value)
+                {
+                    Console.WriteLine("Node is present");
+                    return value;
+                }
+                temp = temp.next;
+            }
+            Console.WriteLine("\n{0} is not present", value);
+            return 0;
+        }
+        public void DeleteBetween(int data)
+        {
+            Node temp = head, prev = null;
+            if(temp!=null && temp.data == data)
+            {
+                head = temp.next;
+                return;
+            }
+            while(temp!=null && temp.data!=data)
+            {
+                prev = temp;
+                temp = temp.next;
+            }
+            if (temp == null)
+                return;
+            prev.next = temp.next;
+            Console.WriteLine("{0} is deleted from linkedlist",data);
+        }
         public void Display()
         {
             Console.WriteLine("Displaying Nodes");
             Node temp = this.head;
-            if(temp==null)
+            if (temp == null)
             {
                 Console.WriteLine("LinkedList is empty");
-            return;
+                return;
             }
             while (temp != null)
             {
                 Console.WriteLine(temp.data + "");
                 temp = temp.next;
             }
+        }
+        public int Getsize()
+        {
+            Node temp = this.head;
+            int size = 0;
+            while(temp!=null)
+            {
+                size++;
+                temp = temp.next;
+            }
+            Console.WriteLine("Thie size of linkedList is {0}", size);
+            return size;
         }
     }
 }

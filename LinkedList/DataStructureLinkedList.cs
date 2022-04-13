@@ -75,6 +75,18 @@ namespace LinkedList
             Console.WriteLine("\n{0} is not present", value);
             return 0;
         }
+        public void InsertAfter(Node prev_node,int data)
+        {
+            if(prev_node==null)
+            {
+                Console.WriteLine("the given previous Node" + "cannot be null");
+                return;
+            }
+            Node newnode = new Node(data);
+            newnode.next = prev_node.next;
+            prev_node.next = newnode;
+            Console.WriteLine("{0} is inserted into linkedlist", newnode.data);
+        }
 
         public void Display()
         {
